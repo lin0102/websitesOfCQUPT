@@ -1,0 +1,160 @@
+[
+    {
+        "kindname": "红岩网校",
+        "webs": [
+            {
+                "type": "内网",
+                "weblist": [
+                    {
+                        "name": "关于红岩",
+                        "url": "http://hongyan.cqupt.edu.cn/aboutus/"
+                    },
+                    {
+                        "name": "邮资源",
+                        "url": "http://software.sre.redrock.team/"
+                    },
+                    {
+                        "name": "BTDOWN",
+                        "url": "http://172.22.161.11/"
+                    },
+                    {
+                        "name": "锦瑟南山",
+                        "url": "http://202.202.43.41/jsns/"
+                    },
+                    {
+                        "name": "拾货",
+                        "url": "http://202.202.43.41/market/"
+                    },
+                    {
+                        "name": "BTDOWN",
+                        "url": "http://172.22.161.11/"
+                    },
+                    {
+                        "name": "锦瑟南山",
+                        "url": "http://202.202.43.41/jsns/"
+                    },
+                    {
+                        "name": "拾货",
+                        "url": "http://202.202.43.41/market/"
+                    }
+                ]
+            },
+            {
+                "type": "内网",
+                "weblist": [
+                    {
+                        "name": "关于红岩",
+                        "url": "http://hongyan.cqupt.edu.cn/aboutus/"
+                    },
+                    {
+                        "name": "邮资源",
+                        "url": "http://software.sre.redrock.team/"
+                    },
+                    {
+                        "name": "BTDOWN",
+                        "url": "http://172.22.161.11/"
+                    },
+                    {
+                        "name": "锦瑟南山",
+                        "url": "http://202.202.43.41/jsns/"
+                    },
+                    {
+                        "name": "拾货",
+                        "url": "http://202.202.43.41/market/"
+                    },
+                    {
+                        "name": "BTDOWN",
+                        "url": "http://172.22.161.11/"
+                    },
+                    {
+                        "name": "锦瑟南山",
+                        "url": "http://202.202.43.41/jsns/"
+                    },
+                    {
+                        "name": "拾货",
+                        "url": "http://202.202.43.41/market/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "kindname": "学校网站",
+        "webs": [
+            {
+                "type": "内网",
+                "weblist": [
+                    {
+                        "name": "关于红岩",
+                        "url": "http://hongyan.cqupt.edu.cn/aboutus/"
+                    },
+                    {
+                        "name": "邮资源",
+                        "url": "http://software.sre.redrock.team/"
+                    },
+                    {
+                        "name": "BTDOWN",
+                        "url": "http://172.22.161.11/"
+                    },
+                    {
+                        "name": "锦瑟南山",
+                        "url": "http://202.202.43.41/jsns/"
+                    },
+                    {
+                        "name": "拾货",
+                        "url": "http://202.202.43.41/market/"
+                    },
+                    {
+                        "name": "BTDOWN",
+                        "url": "http://172.22.161.11/"
+                    },
+                    {
+                        "name": "锦瑟南山",
+                        "url": "http://202.202.43.41/jsns/"
+                    },
+                    {
+                        "name": "拾货",
+                        "url": "http://202.202.43.41/market/"
+                    }
+                ]
+            },
+            {
+                "type": "内网",
+                "weblist": [
+                    {
+                        "name": "关于红岩",
+                        "url": "http://hongyan.cqupt.edu.cn/aboutus/"
+                    },
+                    {
+                        "name": "邮资源",
+                        "url": "http://software.sre.redrock.team/"
+                    },
+                    {
+                        "name": "BTDOWN",
+                        "url": "http://172.22.161.11/"
+                    },
+                    {
+                        "name": "锦瑟南山",
+                        "url": "http://202.202.43.41/jsns/"
+                    },
+                    {
+                        "name": "拾货",
+                        "url": "http://202.202.43.41/market/"
+                    },
+                    {
+                        "name": "BTDOWN",
+                        "url": "http://172.22.161.11/"
+                    },
+                    {
+                        "name": "锦瑟南山",
+                        "url": "http://202.202.43.41/jsns/"
+                    },
+                    {
+                        "name": "拾货",
+                        "url": "http://202.202.43.41/market/"
+                    }
+                ]
+            }
+        ]
+    }
+]
