@@ -6,7 +6,7 @@
             <img :src="imglist[0].imgsrc" width="736" height="254">
         </div>
         <div class="lunbo-button">
-            <div v-for="(imgobj, index) in imglist" :key="index" class="buttons" ref="buttons"></div>
+            <div v-for="(imgobj, index) in imglist" :key="index" class="buttons" ref="buttons" @click="buttonclick(index)"></div>
         </div>
     </div>
 </template>
@@ -80,7 +80,7 @@
                             this.boolen = false;
                         }, 500);
                     } catch(err) {
-                        // console.log(err);
+                        
                     }
             },
             lightbutton: function () {
@@ -93,20 +93,19 @@
                     }
                     this.$refs.buttons[this.lightedbutton].id = 'lightbutton';
                 } catch(err) {
-                    // console.log(err);
+                    
                 }
             },
-            // buttonclick:function (i) {
-            //     if ( this.$refs.buttons[i].id == 'lightbutton' || this.boolen) {
-            //         return;
-            //     }
-            //     this.stop();
-            //     this.$refs.lbcontent.style.transitionDuration = '0.5s';
-            //     this.$refs.lbcontent.style.left = -736 * (i + 1) + 'px';
-            //     this.lightedbutton = i;
-            //     this.lightbutton();
-            //     this.go();
-            // }
+            buttonclick:function (i) {
+                if ( this.$refs.buttons[i].id == 'lightbutton' || this.boolen) {
+                    return;
+                }
+                this.stop();
+                this.$refs.lbcontent.style.transitionDuration = '0.5s';
+                this.$refs.lbcontent.style.left = -736 * (i + 1) + 'px';
+                this.lightedbutton = i;
+                this.lightbutton();
+            }
         },
         mounted () {
             this.$refs.buttons[0].id = 'lightbutton';
@@ -114,7 +113,7 @@
         },
         beforeDestroy() {
             this.stop();
-            clearInterval(this.timer2)
+            clearTimeout(this.timer2);
         }
     }
 </script>
@@ -150,6 +149,7 @@
         margin-right: 3px;
         margin-bottom: 8px;
         transition-duration: 0.5s;
+        cursor: pointer;
     }
     #lightbutton {
         width: 20px;

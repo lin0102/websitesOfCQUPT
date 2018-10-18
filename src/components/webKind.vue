@@ -66,12 +66,6 @@
   margin-top: 2%;
   display: flex;
 }
-/* .waiwang {
-  height: 35%;
-  width: 100%;
-  margin-top: 2%;
-  display: flex;
-} */
 .title2 {
   width: 100px;
   text-align: center;
@@ -87,8 +81,6 @@
   width: calc(100% / 6);
   text-align: center;
   margin-bottom: 5%;
-  /* margin-left: 5%;
-  margin-right: 2%; */
 }
 .neiwanglist a {
     text-decoration: none;

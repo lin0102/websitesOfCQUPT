@@ -4,8 +4,8 @@
         "url": "http://202.202.43.125/"
     },
     {
-        "name": "学工在线",
-        "url": "http://222.177.140.105/index.shtml"
+        "name": "掌上重邮",
+        "url": "http://hongyan.cqupt.edu.cn/app/"
     },
     {
         "name": "2018迎新网",
@@ -24,57 +24,59 @@
         "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
     },
     {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
+        "name": "图书馆",
+        "url": "http://tsg.cqupt.edu.cn/ShangYeYd_Library/Index.html"
     },
     {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
+        "name": "学工在线",
+        "url": "http://222.177.140.105/index.shtml"
     },
     {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
-    },
-
-    {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
+        "name": "素质教育网络",
+        "url": "http://bxf.cqupt.edu.cn/Bscore/"
     },
     {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
+        "name": "集中收费平台",
+        "url": "http://jzsf.cqupt.edu.cn/jzsf3/"
     },
     {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
-    },
-
-    {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
+        "name": "选课系统1",
+        "url": "http://xk1.cqupt.edu.cn/"
     },
     {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
+        "name": "选课系统2",
+        "url": "http://xk2.cqupt.edu.cn/"
     },
     {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
+        "name": "选课系统3",
+        "url": "http://xk4.cqupt.edu.cn/"
     },
     {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
+        "name": "学生邮箱",
+        "url": "https://mail.cqupt.edu.cn/"
     },
     {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
+        "name": "教师邮箱",
+        "url": "https://mail.cqupt.edu.cn/"
     },
     {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
+        "name": "教务在线",
+        "url": "http://jwzx.cqupt.edu.cn/"
     },
     {
-        "name": "重庆邮电大学",
-        "url": "http://www.cqupt.edu.cn/cqupt/index.shtml"
+        "name": "教室申请",
+        "url": "http://jwzx.cqupt.edu.cn/login.php?return=/jssq/index.php"
+    },
+    {
+        "name": "课表查询",
+        "url": "http://jwzx.cqupt.edu.cn/kebiao/index.php"
+    },
+    {
+        "name": "考试查询",
+        "url": "http://jwzx.cqupt.edu.cn/ksap/index.php"
+    },
+    {
+        "name": "校历",
+        "url": "http://jwzx.cqupt.edu.cn/infoNavi.php?dId=000310"
     }
 ]

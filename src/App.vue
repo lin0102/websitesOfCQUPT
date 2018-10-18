@@ -1,20 +1,6 @@
 <template>
   <div id="app">
-    <div class="nav">
-      <div class="navmain">
-        <img src="../src/assets/logo.png" alt="logo" class="logo">
-        <!-- <router-link 
-            v-for="(link, index) in linkList"
-            :key="index"
-            :to="link.path"
-            class="linkbutton"
-            >{{link.text}}</router-link> -->
-      </div>
-      <a class="backold" :style="{left: screenWidth / 2 + 580 + 'px'}" href="https://hongyan.cqupt.edu.cn/web/"><p>回到旧版</p></a>
-    </div>
-    <!-- <transition name="fade" mode="out-in">
-      <router-view></router-view>
-    </transition> -->
+    <vheader></vheader>
     <home></home>
     <footer>
       <p>本网站由红岩网校工作站负责开发，管理，不经红岩网校委员会书面同意，不得进行转载</p>
@@ -25,42 +11,11 @@
 </template>
 <script>
 import Home from "./views/Home"
+import Vheader from "./components/Vheader"
 export default {
   components: {
-    Home
-  },
-  data () {
-    return {
-      linkList: [
-        // {
-        //    path: "/",
-        //    text: "推荐"
-        // },
-        // {
-        //   path: "/page1",
-        //   text: "权威推荐"
-        // },
-        // {
-        //    path: "/page2",
-        //    text: "权威推荐"
-        // },
-        // {
-        //    path: "/page3",
-        //    text: "权威推荐"
-        // },
-        // {
-        //    path: "/page4",
-        //    text: "权威推荐"
-        // }
-      ],
-      screenWidth: window.innerWidth,
-    }
-  },
-  mounted () {
-    const that = this
-    window.onresize = function temp() {
-      that.screenWidth = window.innerWidth
-    }
+    Home,
+    Vheader
   }
 }
 </script>
@@ -70,54 +25,11 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-.nav {
-  background-color: #5785fb;
-  display: flex;
-  justify-content: center;
+  margin: 0 auto;
   position: relative;
-  padding-top: 10px;
-  width: 100%;
-  padding-bottom: 2.4px;
-}
-.navmain {
-  display: flex;
-  justify-content: flex-start;
-  width: 992px;
-}
-.backold {
-  color: white;
-  flex-shrink: 0;
-  position: absolute;
-  white-space: nowrap;
-  text-decoration: none;
-}
-.setpage:link, .setpage:visited {
-  color: white;
-}
-/* .linkbutton {
-  color: white;
-  background-color: #5785fb;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  font-size: 20px;
-  text-decoration: none;
-  flex-shrink: 0;
-  margin-left: 40px;
-}
-.linkbutton.router-link-exact-active {
-  background-color: white;
-  color: #3875da;
-} */
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
+  min-width: 1080px;
+  max-width: 1518px;
+  overflow-x: hidden;
 }
 footer {
   background-color: #5785fb;

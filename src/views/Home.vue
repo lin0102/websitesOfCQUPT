@@ -7,13 +7,12 @@
           <form action="http://www.baidu.com/baidu" target="_blank" class="sousuo"> 
               <div class="searchicon">
                 <img src="../assets/baidu.png" alt="Baidu">
-                <img src="../assets/xiala.png" alt="xiala">
               </div>
               <input type="text" name="word" size=30 placeholder="请输入您要搜索的内容" autocomplete="off">
               <img src="../assets/sousuo.png" alt="sousuo" @click="submitsearch()" class="ssj">
           </form>
           <div class="weather">
-            <p>星期{{weather.weekday[weather.weekday.length - 1]}}&nbsp;<span>{{weather.type}}</span></p>
+            <p>星期{{weather.weekday}}&nbsp;<span>{{weather.type}}</span></p>
             <p>{{weather.low}}&nbsp;-&nbsp;{{weather.high}}℃</p>
           </div>
         </div>
@@ -30,16 +29,26 @@
           <p>关于我们</p>
         </div>
         <div class="aboutmain">
-          <div class="arrow"><img src="../assets/up.png" alt="向上" width="30" height="30"></div>
-          <div class="content" >
-            <div class="box"  style="top:0;">
-              <img src="../assets/zhaoxian.png" alt="">
-              <img src="../assets/yingxin.png" alt="">
-              <img src="../assets/bangmang.png" alt="">
+          <div class="arrow" @click="moveup()"><img src="../assets/up.png" alt="向上" width="30" height="30"></div>
+          <div class="content" ref="content">
+            <div class="box"  style="top:0;" ref="box">
+              <a target="_blank" v-for="(aboutimg, index) in aboutus" :key="index" :href="aboutimg.url" >
+                <img :src="aboutimg.imgsrc">
+              </a>
             </div>
           </div>
-          <div class="arrow"><img src="../assets/down.png" alt="向下" width="30" height="30"></div>
+          <div class="arrow" @click="movedown()"><img src="../assets/down.png" alt="向下" width="30" height="30"></div>
         </div>
+      </div>
+    </div>
+    <div class="qcode" :style="{left: screenWidth / 2  + 505+'px'}">
+      <div>
+        <img src="../assets/zhangyou.png" alt="掌上重邮二维码">
+        <p>掌上重邮</p>
+      </div>
+      <div>
+        <img src="../assets/bangshou.png" alt="重邮小帮手二维码">
+        <p>重邮小帮手</p>
       </div>
     </div>
     <div class="allweb">
@@ -52,9 +61,6 @@
 import lunbo from "../components/lunbo"
 import webKind from "../components/webKind"
 import axios from "axios"
-import hotweblist from "../assets/hotweb.json"
-import allweblist from "../assets/allweb.json"
-import func from './vue-temp/vue-editor-bridge';
 export default {
   components: {
     lunbo,
@@ -64,14 +70,35 @@ export default {
     return {
       imglist: [
         {
-          imgsrc: require("../assets/lunbo1.png")
+          imgsrc: require("../assets/yingxin2.png")
         },
         {
-          imgsrc: require("../assets/lunbo2.png")
+          imgsrc: require("../assets/zhangyou2.png")
         },
         {
-          imgsrc: require("../assets/lunbo3.png")
+          imgsrc: require("../assets/bangmang2.png")
+        },
+        {
+          imgsrc: require("../assets/xuanjiang2.png")
         }
+      ],
+      aboutus: [
+        {
+          imgsrc: require("../assets/redrock.png"),
+          url: "http://hongyan.cqupt.edu.cn/aboutus/"
+        },
+        {
+          imgsrc: require("../assets/bangmang.png"),
+          url: "http://wx.yyeke.com/nodejs/welcome2018/#/activity/wenda/all/1"
+        },
+        {
+          imgsrc: require("../assets/yingxin.png"),
+          url: "http://wx.yyeke.com/nodejs/welcome2018/"
+        },
+        {
+          imgsrc: require("../assets/xuanjiang.png"),
+          url: ""
+        },
       ],
       weather: {
         weekday: "--",
@@ -79,43 +106,59 @@ export default {
         high: "--",
         type: "晴"
       },
-      hotweblist: hotweblist,
-      allweblist: allweblist
+      hotweblist: config.hotweb,
+      allweblist: config.allweb,
+      screenWidth: window.innerWidth,
     }
     },
     methods : {
       submitsearch: function() {
         document.querySelector(".sousuo").submit();
       },
-      // moveup: function() {
-      //   this.$refs.box.style.top = parseInt(this.$refs.box.style.top) + this.$refs.content.offsetHeight + 'px';
-      // },
-      // movedown: function () {
-      //   this.$refs.box.style.top = parseInt(this.$refs.box.style.top) - this.$refs.content.offsetHeight + 'px';
-      // }
+      moveup: function() {
+        if(parseInt(this.$refs.box.style.top) == 0) {
+          return;
+        }
+        this.$refs.box.style.top = parseInt(this.$refs.box.style.top) + this.$refs.content.offsetHeight + 'px';
+      },
+      movedown: function () {
+        if(parseInt(this.$refs.box.style.top) <= (this.$refs.content.offsetHeight - this.$refs.box.offsetHeight) ) {
+          return;
+        }
+        this.$refs.box.style.top = parseInt(this.$refs.box.style.top) - this.$refs.content.offsetHeight + 'px';
+      }
     },
     mounted() {
-      axios.get("http://wthrcdn.etouch.cn/weather_mini?city=重庆")
+      axios.get("https://restapi.amap.com/v3/weather/weatherInfo?key=0e4e53c12afaed2a26fdf2e0ef1956dc&city=500108&extensions=all")
         .then(res => {
-            this.weather.weekday = res.data.data.forecast[0].date;
-            this.weather.low = res.data.data.forecast[0].low.replace(/^[\u4e00-\u9fa5]+\s/, "").replace("℃","");
-            this.weather.high = res.data.data.forecast[0].high.replace(/^[\u4e00-\u9fa5]+\s/, "").replace("℃","");
-            this.weather.type = res.data.data.forecast[0].type;
-        });
-    }
+            let weekdays = ["一", "二", "三", "四", "五", "六", "日"];
+            let hour = new Date().getHours();
+            this.weather.weekday = weekdays[res.data.forecasts[0].casts[0].week - 1];
+            this.weather.low = res.data.forecasts[0].casts[0].nighttemp;
+            this.weather.high = res.data.forecasts[0].casts[0].daytemp;
+            this.weather.type = (hour >= 6 && hour < 18) ? res.data.forecasts[0].casts[0].dayweather : res.data.forecasts[0].casts[0].nightweather;
+      });
+      const that = this;
+      window.onresize = function() {
+        that.screenWidth = window.innerWidth;
+      }
+    },
 };
 </script>
 <style scoped>
+.home {
+  position: relative;
+}
 .popular {
   width: 992px;
   height: 560px;
   background-color: #f9f8fd;
   position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 .pleft {
   width: 736px;
@@ -145,6 +188,7 @@ export default {
   justify-content: space-between;
   background-color: white;
   border-radius: 5px;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.144);
 }
 .sousuo input {
   height: 80%;
@@ -167,6 +211,7 @@ export default {
   justify-content: center;
   padding-top: 5px;
   padding-bottom: 5px;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.144);
 }
 .weather p{
   margin: 0;
@@ -184,6 +229,7 @@ export default {
   flex-wrap: wrap;
   background-color: white;
   border-radius: 5px;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.144);
 }
 .hotwebs {
   width: 20%;
@@ -218,6 +264,7 @@ export default {
   padding-left: 18px;
   padding-top: 10px;
   padding-right: 5px;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.144);
 }
 .aboutmain {
   margin-top: 10px;
@@ -259,6 +306,7 @@ export default {
   height: 82%;
   width: 100%;
   overflow-y: hidden;
+  overflow-x: visible;
 }
 .box {
   display: flex;
@@ -267,21 +315,51 @@ export default {
   position: relative;
   transition-duration: 0.5s;
 }
-.box img{
+.box a{
+  width: 198px;
+  height: 130px;
   margin-bottom: 14px;
   border-radius: 5px;
 }
-.box img:nth-child(3n) {
-  margin-bottom: 0;
+.box a:nth-child(3n) {
+  margin-bottom: 0px;
+}
+.box a:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.144);
+}
+.box img{
+  width: 100%;
+  height: 100%;
+}
+.qcode {
+  position: fixed;
+  top:86.6px; 
+  z-index: 10;
+}
+.qcode div {
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  color: #666666;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.144);
+}
+.qcode div:last-child{
+  margin-top: 15px;
+}
+.qcode p{
+  margin: 0;
 }
 .allweb {
   width: 992px;
   background-color: white;
   position: relative;
-  left: 50%;
-  transform: translate(-50%);
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 20px;
   border-radius: 5px;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.144);
 }
 </style>
 
