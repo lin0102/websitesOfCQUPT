@@ -2,20 +2,12 @@
 
 [线上地址](https://hongyan.cqupt.edu.cn/websites/)
 
-## Project setup
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+安装依赖包————npm install
+跑起服务器————npm run serve
+打包————npm run build
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
 ## 网址修改说明
 ```
