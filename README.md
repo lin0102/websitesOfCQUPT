@@ -1,4 +1,6 @@
-# websites
+# 重邮网址大全
+
+[线上地址](https://hongyan.cqupt.edu.cn/websites/)
 
 ## Project setup
 ```
@@ -14,13 +16,6 @@ npm run serve
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-[线上地址](https://hongyan.cqupt.edu.cn/websites/)
 
 ## 网址修改说明
 ```
