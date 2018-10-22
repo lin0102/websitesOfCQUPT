@@ -2,13 +2,6 @@
 
 [线上地址](https://hongyan.cqupt.edu.cn/websites/)
 
-```
-安装依赖包————npm install
-跑起服务器————npm run serve
-打包————npm run build
-```
-
-
 ## 网址修改说明
 ```
 网址分为两部分，全部写在config.js中，一部分热门板块，放在hotweb中，另一部分是所有网址，放在allweb中
