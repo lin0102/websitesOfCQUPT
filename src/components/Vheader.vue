@@ -2,7 +2,7 @@
     <div class="header">
         <div class="navmain">
             <img src="../assets/logo.png" alt="logo" class="logo">
-            <div class="backold"><a href="https://hongyan.cqupt.edu.cn/web/">回到旧版</a></div>
+            <div class="backold"><a href="https://hongyan.cqupt.edu.cn/web_old/">回到旧版</a></div>
         </div>
     </div>
 </template>

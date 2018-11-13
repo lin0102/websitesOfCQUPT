@@ -1,9 +1,9 @@
 <template>
     <div class="lunbo" @mouseover="stop" @mouseout="go">
         <div class="lunbo-content" ref="lbcontent" style="left: -736px;transition-duration: 0.5s;" :style="{width:(imglist.length+2)*736+'px'}">
-            <img :src="imglist[imglist.length - 1].imgsrc" width="736" height="254">
-            <img v-for="(imgobj, index) in imglist" :key="index" :src="imgobj.imgsrc" width="736" height="254">
-            <img :src="imglist[0].imgsrc" width="736" height="254">
+            <img :src="imglist[imglist.length - 1].url" width="736" height="254">
+            <img v-for="(imgobj, index) in imglist" :key="index" :src="imgobj.url" width="736" height="254">
+            <img :src="imglist[0].url" width="736" height="254">
         </div>
         <div class="lunbo-button">
             <div v-for="(imgobj, index) in imglist" :key="index" class="buttons" ref="buttons" @click="buttonclick(index)"></div>
@@ -15,7 +15,13 @@
     export default {
         props:{
             imglist: {
-                type: Array
+                type: Array,
+                default: function(){
+                    return [{
+                        "name": "迎新网",
+                        "url": "https://hongyan.cqupt.edu.cn/web/img/yingxin2.6ea16ca4.png"
+                    }]
+                }
             }
         },
         data () {

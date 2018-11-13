@@ -7,7 +7,10 @@
         <div class="neiwang" v-for="(websites, index) in webkinds.webs" :key="index">
           <div class="title2">{{websites.type}}</div>
           <div class="neiwangs">
-            <div v-for="(item, index) in websites.weblist" :key="index" class="neiwanglist"><a :href="item.url" target="_blank">{{item.name}}</a></div>
+            <div v-for="(item, index) in websites.weblist" :key="index" class="neiwanglist">
+                <a :href="item.url" target="_blank">{{item.name}}</a>
+                <img src="../assets/hoticon.png" alt="hot" class="hoticon" v-if="item.hot">
+            </div>
           </div>
         </div>
     </div>
@@ -27,8 +30,9 @@
                                 weblist: [
                                     {
                                         name: "关于红岩",
-                                        url: "http://hongyan.cqupt.edu.cn/aboutus/"
-                                    }
+                                        url: "http://hongyan.cqupt.edu.cn/aboutus/",
+                                        hot: 1
+                                    },
                                 ]
                             }
                         ]
@@ -81,6 +85,13 @@
   width: calc(100% / 6);
   text-align: center;
   margin-bottom: 5%;
+  position: relative;
+}
+.hoticon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-30%,-45%);
 }
 .neiwanglist a {
     text-decoration: none;
